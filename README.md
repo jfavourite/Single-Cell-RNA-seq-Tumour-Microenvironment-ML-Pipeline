@@ -1,4 +1,4 @@
-# Single-Cell RNA-seq Tumour Microenvironment Pipeline — Breast Cancer
+# Single-Cell RNA-seq Tumour Microenvironment ML Pipeline — Breast Cancer
 
 A complete single-cell analysis pipeline applied to the Wu et al. (2021) breast cancer
 single-cell atlas (GSE176078), combining batch-corrected representation learning (scVI),
@@ -94,19 +94,6 @@ the scVI embedding — across all 26 patients — is the more meaningful validat
 - **shap** — model explainability
 - **matplotlib / seaborn** — visualisation
 
-## Repository structure
-
-```
-scRNA_TME_pipeline_clean.ipynb   # full annotated pipeline notebook
-results/
-  adata_raw.h5ad                 # checkpoint: raw concatenated counts
-  adata_pca_baseline.h5ad        # checkpoint: post-QC, normalised, HVG, PCA
-  adata_scvi.h5ad                # checkpoint: scVI latent space + UMAP
-  adata_scvi_clustered.h5ad      # checkpoint: + Leiden clusters + annotations
-  scvi_model/                    # trained scVI model
-  *.png                          # all figures referenced above
-```
-
 ## Notes on methodology
 
 - A 30,000-cell subsample was used for scVI training to keep CPU training time
@@ -117,3 +104,7 @@ results/
   sample size.
 - The immune hot/cold feature matrix explicitly excludes all T-cell populations to avoid
   circularity between the label definition and the predictive features.
+## Author
+
+Imhanbor Joseph  
+Research assistant- Lagos State University, Bioinformatics lab
